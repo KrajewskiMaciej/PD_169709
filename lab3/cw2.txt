@@ -1,0 +1,17 @@
+ 	T1			T2			typ								wartość
+1.	policjant		policjant		atom(stała, napis)						true
+2.	X			Y			var								true
+3.	papier			kartka			atom(stała, napis)						false
+4.	125			125			number(całkowita,stała)						true
+5.	rzeczownik(alfa)	alfa			compound(bez zmiennych wolnych),atom(stała,napis)		false
+6.	punkt(A,b,c)		punkt(A,b,c)		compound(jedna zmienna wolna)					true
+7.	litera(C)		slowo(litera)		compound(jedna zmienna wolna),compound(bez zmiennych wolnych)	false
+8.	slowo(C)		slowo(ania,ewa)		compound(jedna zmienna wolna),compound(bez zmiennych wolnych)	false
+9.	jedzie(student,rower)	jedzie(student,X)	compound(bez zmiennych wolnych),compound(jedna zmienna wolna)	true(X=rower)
+10.	'student'		student			atom(stała, napis)						true
+11.	para(X,Y)		para(jacek,ewa)		compound(dwie zmienne wolne),compound(bez zmiennych wolnych)	True(X=Jjacek,Y=ewa)
+12.	f(X,X)			f(a,b)			compound(jedna zmienna wolna),compound(bez zmiennych wolnych)	false(X=a,X=b)
+13.	f(X,a(b,c))		f(Z,a(Z,c))		compound(jedna zmienna wolna)					true(X=Z,Z=b)
+14.	fu(a,X,f(g(Y)))		fu(V,h(Z,V),f(V))	compound(dwie zmienne wolne)		 			false
+15.	fu(a,X,F(g(Y)))		fu(Y,f(Z),f(Z))		compound(dwie zmienne wolne)					true(X=f(g(a)),Y=a,Z=g(a))
+16.	fu(f(X),Y,a)		fu(f(g(Y)),c,Z)		compound(dwie zmienne wolne)					true(X=g(c),Y=c,Z=a)
